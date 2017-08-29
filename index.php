@@ -47,3 +47,4 @@ echo "<tr><td>" . $tel['Modelis'] . "</td><td>" . $tel['Markė'] . "</td><td>" .
 
 ?>	
 </table>
+
