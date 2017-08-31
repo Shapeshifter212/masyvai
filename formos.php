@@ -26,7 +26,24 @@
 			Rezultatas: <br/>
 			<?php 
 				if (isset($_POST['arg1']) && isset($_POST['arg2'])) {
-					echo $_POST['arg1'] + $_POST['arg2'];
+					
+					if ($_POST['operation'] == "sum") {
+						
+						echo $_POST['arg1'] + $_POST['arg2'];
+					
+					} else if ($_POST['operation'] == "ded") {
+						
+						echo $_POST['arg1'] - $_POST['arg2'];
+					
+					} else if ($_POST['operation'] == "mult") {
+						
+						echo $_POST['arg1'] * $_POST['arg2'];
+
+					} else if ($_POST['operation'] == "div") {
+						
+						echo $_POST['arg1'] / $_POST['arg2'];
+					}
+				
 				} else {
 					echo "Nera duomenu";
 				}
