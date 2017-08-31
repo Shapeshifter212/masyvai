@@ -25,7 +25,8 @@
 			<<?php print_r($_POST) ?>
 			Rezultatas: <br/>
 			<?php 
-				if (isset($_POST['arg1']) && isset($_POST['arg2'])) {
+
+				 if (isset($_POST['arg1']) && isset($_POST['arg2'])) {
 					
 					if ($_POST['operation'] == "sum") {
 						
@@ -36,19 +37,33 @@
 						echo $_POST['arg1'] - $_POST['arg2'];
 					
 					} else if ($_POST['operation'] == "mult") {
-						
-						echo $_POST['arg1'] * $_POST['arg2'];
 
+						echo $_POST['arg1'] * $_POST['arg2'];
+							
+
+						for ( $eil=0;  $eil <= $_POST['arg1'];  $eil++) { 
+							for ($zenkl=0; $zenkl <= $_POST['arg2']; $zenkl++) { 
+								echo "#";
+								}
+								echo "<br>";
+								}
+							
 					} else if ($_POST['operation'] == "div") {
 						
-						echo $_POST['arg1'] / $_POST['arg2'];
+						if ($_POST['arg2'] == 0) {
+							echo '<div class="alert alert-secondary" role="alert">
+  				Operacija negalima!</div>';
+						} else {
+							echo $_POST['arg1'] / $_POST['arg2'];
+
+						}
 					}
 				
 				} else {
 					echo "Nera duomenu";
-				}
+					}
 
-			 ?>
+			?>
 			</div>
 		</div>
 	</div>	
